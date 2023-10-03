@@ -25,6 +25,8 @@ contract SendEther{
         payable(msg.sender).transfer(amount);
         Richestaddresses[msg.sender] = 0;
 
+// Create seperate functions for send and receive not in the same function
+
     }
 
 
