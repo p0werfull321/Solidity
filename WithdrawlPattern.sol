@@ -8,7 +8,6 @@ contract SendEther{
     address richest;
 
     constructor() payable{
-        Richestaddresses[msg.sender] = msg.value;
         max = msg.value;
         richest = msg.sender;
         payable(msg.sender).transfer(msg.value);
@@ -18,7 +17,7 @@ contract SendEther{
         require(msg.value > max, "Not the richest");
         max = msg.value;
         richest = msg.sender;
-        Richestaddresses[msg.sender] = max; 
+        Richestaddresses[richest] = max; 
     }
 
     function Withdraw() public payable{
